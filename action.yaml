@@ -10,7 +10,7 @@ runs:
       with:
         script: |
           core.log('Creating a comment on the issue/pr')
-          core.debug(JSON.stringify(context, null, 2)
+          core.debug(JSON.stringify(context, null, 2))
 
           if (context.issue.number === undefined) {
             core.setFailed('This action can only be run on issues or pull requests')
