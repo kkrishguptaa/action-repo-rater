@@ -1,0 +1,32 @@
+name: Repo Rater Action
+description: 'GitHub Action to ask contributors to rate the repo'
+branding:
+  color: blue
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/github-script@v7
+      with:
+        script: |
+          core.log('Creating a comment on the issue/pr')
+          core.debug(JSON.stringify(context, null, 2)
+
+          if (context.issue.number === undefined) {
+            core.setFailed('This action can only be run on issues or pull requests')
+          }
+
+          const comment = await github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `Thank you all for contributing to this repo! Please take a moment to rate its DX on [EddieHub Repo Rater](https://repo-rater.eddiehub.io/rate?owner=${context.repo.owner}&name=${context.repo.repo})`
+          })
+
+          if (comment.status !== 201) {
+            core.debug(JSON.stringify(comment))
+            core.setFailed('Failed to create comment on issue')
+          }
+
+          core.info('Successfully Commented on the issue')
+          core.summary.addLink('Comment Created!', comment.data.html_url)
