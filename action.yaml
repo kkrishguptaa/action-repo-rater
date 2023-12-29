@@ -2,12 +2,24 @@ name: Repo Rater Action
 description: 'GitHub Action to ask contributors to rate the repo'
 branding:
   color: blue
+  icon: heart
+
+inputs:
+  github-token:
+    description: 'GitHub Token'
+    required: true
+    default: ${{ github.token }}
+  message:
+    description: 'Message to be displayed'
+    required: true
+    default: 'Thank you all for contributing to this repo! Please take a moment to rate its DX on [EddieHub Repo Rater](https://repo-rater.eddiehub.io/rate?owner=${{ github.repository_owner }}&name=${{ github.event.repository.name }}) and star it 💓'
 
 runs:
   using: composite
   steps:
     - uses: actions/github-script@v7
       with:
+        github-token: ${{ inputs.github-token }}
         script: |
           core.info('Creating a comment on the issue/pr')
           core.debug(JSON.stringify(context, null, 2))
@@ -20,7 +32,7 @@ runs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `Thank you all for contributing to this repo! Please take a moment to rate its DX on [EddieHub Repo Rater](https://repo-rater.eddiehub.io/rate?owner=${context.repo.owner}&name=${context.repo.repo})`
+            body: '${{ inputs.message }}'
           })
 
           if (comment.status !== 201) {
