@@ -3,6 +3,7 @@ run-name: repo-rater (#${{ github.event.issue.number || github.event.pull_reques
 
 permissions:
   issues: write
+  pull-requests: write
 
 on:
   issues:
