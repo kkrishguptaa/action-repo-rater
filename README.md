@@ -49,11 +49,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: xkrishguptaa/action-repo-rater@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## 📝 Configuration
 
 | Key               | Description                                                                 | Required | Default Value |
 | ----------------- | --------------------------------------------------------------------------- | -------- | ------------- |
-| github-token      | The GitHub token to use for authentication, Use this if you want the comment to be posted a user rather than `github-actions` | false | `${{ github.token }}` |
+| github-token      | The GitHub token to use for authentication, Use this if you want the comment to be posted a user rather than `github-actions` | true | Please set value as `${{ secrets.GITHUB_TOKEN }}` |
 | message           | The message to post on the issue or pull request                              | false    | `Thank you all for contributing to this repo! Please take a moment to rate its DX on [EddieHub Repo Rater](https://repo-rater.eddiehub.io/rate?owner=${{ github.repository_owner }}&name=${{ github.event.repository.name }}) and star it 💓` |
