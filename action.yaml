@@ -12,7 +12,7 @@ inputs:
   message:
     description: 'Message to be displayed'
     required: true
-    default: 'Thank you all for contributing to this repo! Please take a moment to rate its DX on [EddieHub Repo Rater](https://repo-rater.eddiehub.io/rate?owner=${{ github.repository_owner }}&name=${{ github.event.repository.name }}) and star it 💓'
+    default: 'Thank you all for contributing to this repo! Please take a moment to rate its DX (Developer Experience) on [EddieHub Repo Rater](https://repo-rater.eddiehub.io/rate?owner=${{ github.repository_owner }}&name=${{ github.event.repository.name }}) and star it 💓'
 
 runs:
   using: composite
