@@ -29,7 +29,7 @@ jobs:
           git checkout -b ${{ env.PR_BRANCH }}
 
       - name: Create Changelog
-        uses: TriPSs/conventional-changelog-action@8118086024a5380b05b0d54ed2181516082e090f # v4
+        uses: TriPSs/conventional-changelog-action@25971cecbaa4b86f8524f86fcb8b30e80bd59534 # v5
         id: changelog
         with:
           github-token: ${{ github.token }}
