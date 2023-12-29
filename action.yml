@@ -8,7 +8,7 @@ inputs:
   github-token:
     description: 'GitHub Token'
     required: true
-    default: ${{ secrets.GITHUB_TOKEN }}
+    default: ${{ github.token }}
   message:
     description: 'Message to be displayed'
     required: true
