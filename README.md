@@ -27,11 +27,15 @@
 
 ### Creation Action File
 
-Create a file called `.github/workflows/repo-rater.yml
+Create a file called `.github/workflows/repo-rater.yml`
 
 ```yml
 name: repo-rater
 run-name: repo-rater (#${{ github.event.issue.number || github.event.pull_request.number }})
+
+permissions:
+  issues: write
+  pull-requests: write
 
 on:
   issues:
