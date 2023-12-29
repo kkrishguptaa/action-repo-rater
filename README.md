@@ -1,3 +1,5 @@
+[![RepoRater](https://repo-rater.eddiehub.io/api/badge?owner=xkrishguptaa&name=action-repo-rater)](https://repo-rater.eddiehub.io/rate?owner=xkrishguptaa&name=action-repo-rater)
+
 <div align="center">
   <img src="https://github.com/EddieHubCommunity.png" height="100px" width="100px" style="border-radius: 100%;" />
   <br />
