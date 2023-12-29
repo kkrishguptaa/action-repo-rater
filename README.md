@@ -13,6 +13,20 @@
 
 ## 📦 Usage
 
+### Allow github-actions to create comments
+
+1. Go to Settings -> Actions
+   
+   <img width="1582" alt="GitHub Action Settings Page" src="https://github.com/xkrishguptaa/action-repo-rater/assets/135469703/bbff3611-9085-4904-855e-7abd05433bef">
+
+2. Enable `write` permission for GitHub Actions
+   
+   <img width="1582" alt="image" src="https://github.com/xkrishguptaa/action-repo-rater/assets/135469703/3888f62e-9606-4ac5-a2d7-6ab5cb9bad55">
+
+### Creation Action File
+
+Create a file called `.github/workflows/repo-rater.yml
+
 ```yml
 name: repo-rater
 run-name: repo-rater (#${{ github.event.issue.number || github.event.pull_request.number }})
@@ -28,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: xkrishguptaa/action-repo-rater@main
+      - uses: xkrishguptaa/action-repo-rater@v1
 ```
 
 ## 📝 Configuration
