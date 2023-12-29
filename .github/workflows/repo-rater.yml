@@ -1,3 +1,5 @@
+name: repo-rater
+
 on:
   issues:
     types: [closed]
