@@ -23,7 +23,7 @@ jobs:
       PR_BRANCH: release-ci-${{ github.sha }}
 
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: Create Branch
         run: |
           git checkout -b ${{ env.PR_BRANCH }}
@@ -72,7 +72,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4scripts/build.sh
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4scripts/build.sh
 
       - name: Create Release
         uses: softprops/action-gh-release@69320dbe05506a9a39fc8ae11030b214ec2d1f87 # v2
