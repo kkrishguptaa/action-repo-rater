@@ -1,3 +1,5 @@
+> Sunsetted in lieu of the deprecation of RepoRater itself.
+
 [![RepoRater](https://repo-rater.eddiehub.io/api/badge?owner=xkrishguptaa&name=action-repo-rater)](https://repo-rater.eddiehub.io/rate?owner=xkrishguptaa&name=action-repo-rater)
 
 <div align="center">
@@ -48,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: xkrishguptaa/action-repo-rater@v1
+      - uses: kkrishguptaa/action-repo-rater@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
